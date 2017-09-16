@@ -3,11 +3,12 @@
 *.lock
 profile
 *~.nib
-
+.idea/
 
 
 DerivedData/
 build/
+cmake-build-debug/
 
 
 

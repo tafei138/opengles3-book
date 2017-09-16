@@ -26,7 +26,7 @@
 #include  <X11/Xlib.h>
 #include  <X11/Xatom.h>
 #include  <X11/Xutil.h>
-
+#include<time.h>
 // X11 related local variables
 static Display *x_display = NULL;
 static Atom s_wmDeleteMessage;
@@ -176,7 +176,12 @@ void WinLoop ( ESContext *esContext )
         if (esContext->drawFunc != NULL)
             esContext->drawFunc(esContext);
 
-        eglSwapBuffers(esContext->eglDisplay, esContext->eglSurface);        
+        eglSwapBuffers(esContext->eglDisplay, esContext->eglSurface);
+
+
+        clock_t t = clock();
+        long sec = t ;
+        printf ( "time is: %ld\n", sec );
     }
 }
 
